@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container-fluid">
+
+<div class="row">
+
+
+    <div class="col-sm-4">
+
+
+    </div>
+
+
+    <div class="col-sm-4" style="padding-top: 20px">
+
+        <div class="card body" style="padding-bottom: 70px; padding-left: 20px; padding-right: 20px; padding-top: 20px" id="login_card">
+        <h4 class="text-center alert alert-info">Login Form</h4>
+
+        <form method="POST" action="">
+        {% csrf_token %}
+        <div class="login_form">
+              <div class="form-group">
+        <label class="col-form-label">Username</label>
+
+        <div class="row">
+                <div class="col"><input type="text" class="form-control" id="org" placeholder="Enter Username" required="" value="" name="username"></div>
+
+        </div>          
+ </div>
+
+
+
+        <div class="form-group">
+           <label class="col-form-label">Password </label>
+           <div class="row">
+            <div class="col">
+                <input type="password" class="form-control" id="org" placeholder="Enter Password" required="" value="" name="password">
+            </div>
+            </div>          
+        </div>
+
+ <button type="submit" id="login_btn" class="btn btn-primary" >Login</button>
+
+ <br>
+                   <br>
+                        <div class="form-group">
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+
+                    <div class="alert alert-success" style="color:red;"> {{ message }}</div>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+</div>
+</form>
+
+</div>
+</div>
+</div>
+
+
+    <div class="col-sm-4"></div>
+
+</div>
+</div>
+{% endblock %}

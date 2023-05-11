@@ -1,0 +1,69 @@
+{% extends 'patient/base.html' %} {% block body %}
+
+<div id="content-wrapper">
+  <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="">Appointment Panel</a>
+      </li>
+    </ol>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <h4 class="text-center alert alert-info">List Of Disease Diagnosed</h4>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Patient</th>
+              <th scope="col">Status</th>
+              <th scope="col">Day</th>
+              <th scope="col">Time</th>
+              <th scope="col">Doctor</th>
+              <th scope="col">Doctor Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <input type="hidden" value="{{ user.id }}" name="" id="user_id" />
+
+            {% for d in ment %}
+            <tr>
+              <td>{{ d.id }}</td>
+
+              <td>{{ d.patient.username }}</td>
+
+              {% if d.approved == False %}
+              <td>Pending</td>
+              {% else %}
+              <td>{{ d.medicine }}</td>
+              {% endif %} {% if d.ment_day == None %}
+              <td>Not Set</td>
+              {% else %}
+              <td>{{ d.ment_day|date:"M d, Y" }}</td>
+              {% endif %} {% if d.time == None %}
+              <td>Not Set</td>
+              {% else %}
+              <td>{{ d.time }}</td>
+              {% endif %} {% if d.doctor.username == Null %}
+              <td>None</td>
+              {% else %}
+              <td>{{ d.doctor.username }}</td>
+              {% endif %} {% if d.doctor.phonenumber == Null %}
+              <td>None</td>
+              {% else %}
+              <td>{{ d.doctor.phonenumber }}</td>
+              {% endif %}
+            </tr>
+
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <div id="ment_result" class="col-sm-10 offset-sm-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

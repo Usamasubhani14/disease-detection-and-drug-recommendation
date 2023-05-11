@@ -1,0 +1,82 @@
+
+{% extends 'patient/base.html' %}
+{% load static %}
+
+
+{% block body %}
+<div class="container-fluid" style="padding-top: 20px">
+<div class="row">
+    <div class="col-sm-4">
+              <div class="card mb-3">
+                <div class="card-header" style="background-color: #007bff;color: white; font-weight: bold; text-align: center;">
+                    Create Your Profile 
+                </div>
+                <div class="card-body" style="">
+            <form action="" method="POST">
+                {% csrf_token %}
+        <div class="form-group">
+                <div class="col">
+                        <span style="padding-left: 15px">Date of birth</span>
+
+                        <input 
+                        type="date" id="start"  value="dd-mm-yyyy"
+                        min="1950-01-01" max="2021-12-12"
+                        class="form-control" name="birth_date" placeholder="Birth Date" required="required"></div>                 
+        </div>
+
+        <div class="form-group">
+                <div class="col">
+  <select class="w3-select w3-border" name="gender">
+  <option value="{{ gender.0 }}"> Please Select Your Gender ................ </option>
+  <option value="{{ gender.0 }}"> Male</option>
+  <option value="{{ gender.1 }}"> Female</option>
+
+</select>
+                </div>
+        </div>
+
+
+      <div class="form-group">
+                <div class="col"><input type="text" class="form-control" name="country" placeholder="Country" required="required"></div>
+        </div>
+        <div class="form-group">
+                <div class="col"><input type="text" class="form-control" name="region" placeholder="Region" required="required"></div>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-block" href="" style="background-color: #007bff;color: white;">Save</button>
+        </div>
+    </form>
+
+
+
+                {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+
+                    <div class="alert alert-success" style="color:red;"> {{ message }}</div>
+
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+
+        </div>
+</div>
+    </div> 
+    <div class="col-sm-4"></div>
+                    </div>  
+                  </div>
+
+</div>
+
+
+
+<div class="col-sm-3" style="color: red">
+</div>
+
+</div>
+</div>
+
+{% endblock %}

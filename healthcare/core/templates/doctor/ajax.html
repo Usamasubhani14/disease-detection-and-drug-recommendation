@@ -1,0 +1,58 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $('#tbody').on('click', '.btn_recommend', function () {
+      console.log('Button Recommend Drug Clicked');
+      let disease = $(this).attr('data-sid');
+      var userid = $('#tbody #user_id').val();
+
+      console.log('Prediction ID is', disease);
+      console.log('User ID is', userid);
+
+      mydata = { disease: disease, userid: userid };
+      $.ajax({
+        url: '{% url 'mend' %}',
+        method: 'POST',
+        data: mydata,
+
+        success: function (data) {
+          console.log('Data Sent To The Backend');
+        },
+      });
+    });
+
+
+    $('#mytable').on('click', '.btn_plan', function () {
+      console.log('Button Appointment Clicked');
+      let disease = $(this).attr('data-sid');
+
+      $('#prediction_id').val(disease);
+
+      console.log('Prediction ID is', disease);
+    });
+
+
+    $('#myform').on('click', '.modal_ment', function () {
+      console.log('Button Modal Clicked');
+      var pk = $('#prediction_id').val();
+      console.log('Prediction ID is', pk);
+
+      var day = $('#myform #day').val();
+      var time = $('#myform #time').val();
+      console.log('Day is ', day);
+      console.log('Time is ', time);
+
+      mydata = { pk: pk, day: day, time: time };
+      $.ajax({
+        url: '{% url 'savement' %}',
+        method: 'POST',
+        data: mydata,
+
+        success: function (data) {
+          console.log('Data Sent To The Backend');
+
+        },
+      });
+    });
+  });
+</script>

@@ -1,0 +1,326 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Medcare Medical</title>
+
+    <link href="{% static 'core/css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/themify-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/flaticon.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'core/vendors/fontawesome/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <link
+      href="{% static 'core/owl-carousel/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'core/nimate-css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/esponsive.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header_area">
+      <div class="top_menu row m0"></div>
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand logo_h" href="/"
+              ><img src="{% static 'core/img/logo.png' %}" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'doctors' %}">Doctors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'reg' %}">Register</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+          <div
+            class="banner_content d-md-flex justify-content-between align-items-center"
+          >
+            <div class="mb-3 mb-md-0">
+              <h2>Doctors</h2>
+              <p>Belding years moveth earth green behold wherein</p>
+            </div>
+            <div class="page_link">
+              <a href="/">Home</a>
+              <a href="{% url 'doctors' %}">Doctors</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-area area-padding">
+      <div class="container">
+        <div class="area-heading row">
+          <div class="col-md-5 col-xl-4">
+            <h3>
+              Medcare<br />
+              Experience Doctors
+            </h3>
+          </div>
+          <div class="col-md-7 col-xl-8">
+            <p>
+              Land meat winged called subdue without very light in all years sea
+              appear midst forth image him third there set. Land meat winged
+              called subdue without very light in all years sea appear
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-team">
+              <img
+                class="card-img rounded-0"
+                src="{% static 'core/img/team/1.jpg' %}"
+                alt=""
+              />
+              <div class="card-team__body text-center">
+                <h3><a href="#">Dr Adam Brain</a></h3>
+                <p>Cardiologist</p>
+                <div class="team-footer d-flex justify-content-between">
+                  <a class="dn_btn" href=""
+                    ><i class="ti-mobile"></i>+7 235 365 2365</a
+                  >
+                  <ul class="card-team__social">
+                    <li>
+                      <a href="#"><i class="ti-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-twitter-alt"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-skype"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-team">
+              <img
+                class="card-img rounded-0"
+                src="{% static 'core/img/team/2.jpg' %}"
+                alt=""
+              />
+              <div class="card-team__body text-center">
+                <h3><a href="#">Dr Blian Judge</a></h3>
+                <p>Cardiologist</p>
+                <div class="team-footer d-flex justify-content-between">
+                  <a class="dn_btn" href=""
+                    ><i class="ti-mobile"></i>+7 235 365 2365</a
+                  >
+                  <ul class="card-team__social">
+                    <li>
+                      <a href="#"><i class="ti-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-twitter-alt"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-skype"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-team">
+              <img
+                class="card-img rounded-0"
+                src="{% static 'core/img/team/2.jpg' %}"
+                alt=""
+              />
+              <div class="card-team__body text-center">
+                <h3><a href="#">Dr Blian Judge</a></h3>
+                <p>Cardiologist</p>
+                <div class="team-footer d-flex justify-content-between">
+                  <a class="dn_btn" href=""
+                    ><i class="ti-mobile"></i>+7 235 365 2365</a
+                  >
+                  <ul class="card-team__social">
+                    <li>
+                      <a href="#"><i class="ti-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-twitter-alt"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-skype"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-area area-padding-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-sm-6 single-footer-widget">
+            <h4>Top Products</h4>
+            <ul>
+              <li><a href="#">Managed Website</a></li>
+              <li><a href="#">Manage Reputation</a></li>
+              <li><a href="#">Power Tools</a></li>
+              <li><a href="#">Marketing Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-sm-6 single-footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-sm-6 single-footer-widget">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-sm-6 single-footer-widget">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Experts</a></li>
+              <li><a href="#">Agencies</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form
+                target="_blank"
+                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                method="get"
+                class="form-inline"
+              >
+                <input
+                  class="form-control"
+                  name="EMAIL"
+                  placeholder="Your Email Address"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Your Email Address'"
+                  required=""
+                  type="email"
+                />
+                <button class="click-btn btn btn-default">
+                  <i class="ti-arrow-right"></i>
+                </button>
+                <div style="position: absolute; left: -5000px">
+                  <input
+                    name="b_36c4fd991d266f23781ded980_aefe40901a"
+                    tabindex="-1"
+                    value=""
+                    type="text"
+                  />
+                </div>
+
+                <div class="info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row footer-bottom d-flex justify-content-between">
+          <p class="col-lg-8 col-sm-12 footer-text m-0">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved
+          </p>
+          <div class="col-lg-4 col-sm-12 footer-social">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-dribbble"></i></a>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'core/j/jquery-2.2.4.min.' %}"></script>
+    <script src="{% static 'core/j/popper.' %}"></script>
+    <script src="{% static 'core/j/bootstrap.min.' %}"></script>
+    <script src="{% static 'core/j/stellar.' %}"></script>
+    <script src="{% static 'vendors/owl-carousel/owl.carousel.min.' %}"></script>
+    <script src="{% static 'core/j/jquery.ajaxchimp.min.' %}"></script>
+    <script src="{% static 'core/j/waypoints.min.' %}"></script>
+    <script src="{% static 'core/j/mail-script.' %}"></script>
+    <script src="{% static 'core/j/contact.' %}"></script>
+    <script src="{% static 'core/j/jquery.form.' %}"></script>
+    <script src="{% static 'core/j/jquery.validate.min.' %}"></script>
+    <script src="{% static 'core/j/mail-script.' %}"></script>
+    <script src="{% static 'core/j/theme.' %}"></script>
+  </body>
+</html>

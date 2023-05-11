@@ -1,0 +1,131 @@
+{% extends 'doctor/base.html' %} {% block body %}
+
+<div id="content-wrapper">
+  <div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="">Appointment Panel</a>
+      </li>
+    </ol>
+
+    <!-- Icon Cards-->
+    <div class="row">
+      <div class="col-sm-8">
+        <h4 class="text-center alert alert-info">
+          List of Patient Appointment
+        </h4>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Patient</th>
+              <th scope="col">Status</th>
+              <th scope="col">Arrange Appointment</th>
+            </tr>
+          </thead>
+          <tbody id="mytable">
+            {% for d in ment %}
+            <tr>
+              <td>{{ d.id }}</td>
+              <td>{{ d.patient.username }}</td>
+              <td>
+                {% if d.approved == True %}
+                <p>Approved</p>
+                {% else %}
+                <p>Pending</p>
+                {% endif %}
+              </td>
+              <td>
+                <input
+                  class="btn btn-primary btn-sm btn_plan"
+                  type="button"
+                  data-sid="{{d.id}}"
+                  value="Click here"
+                  data-toggle="modal"
+                  data-target="#form"
+                />
+              </td>
+            </tr>
+
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <div
+          class="modal fade"
+          id="form"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-bottom-0">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Arrange Appointment For Patient
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+
+              <form method="POST" id="myform">
+                <div class="modal-body">
+                  <input type="hidden" value="" name="" id="prediction_id" />
+
+                  <div class="form-group">
+                    <label for="password1">Day</label>
+                    <input
+                      type="date"
+                      id="day"
+                      value="dd-mm-yyyy"
+                      min="2021-12-12"
+                      max="2022-12-12"
+                      class="form-control"
+                      name="birth_date"
+                      placeholder="Birth Date"
+                      required="required"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password1">Time</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="time"
+                      placeholder="Time"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="modal-footer border-top-0 d-flex justify-content-center"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-success modal_ment"
+                    id=""
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id="ment_result" class="col-sm-10 offset-sm-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

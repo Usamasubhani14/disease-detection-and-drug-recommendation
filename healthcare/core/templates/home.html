@@ -1,0 +1,344 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>HealthCare</title>
+
+    <link href="{% static 'core/css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/themify-icons.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/flaticon.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'core/vendors/fontawesome/css/all.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/fontawesome.min.css' %}"
+      integrity="sha512-R+xPS2VPCAFvLRy+I4PgbwkWjw1z5B5gNDYgJN5LfzV4gGNeRQyVrY7Uk59rX+c8tzz63j8DeZPLqmXvBxj8pA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="{% static 'core/owl-carousel/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'core/nimate-css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/esponsive.css' %}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <header class="header_area">
+      <div class="top_menu row m0"></div>
+      <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand logo_h" href="/"
+              ><img src="{% static 'core/img/logo.png' %}" alt="" style="width:150px"
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'doctors' %}">Doctors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'reg' %}">Register</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="banner-area d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <h1>
+              Healthcare for All
+              
+            </h1>
+            <p>
+              We believe that access to quality healthcare is a fundamental human right that should be available to all, regardless of their socioeconomic status, ethnicity, gender, or any other factors. Our healthcare center is committed to promoting health equity by providing affordable and accessible care
+            </p>
+            <a href="" class="main_btn">Make an Appointment</a>
+            <a href="" class="main_btn_light">View Department</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div
+            class="col-md-10 offset-md-1 col-lg-6 offset-lg-6 offset-xl-7 col-xl-5"
+          >
+            <div class="about-content">
+              <h4>
+                Expert Care, Personalized Attention
+              </h4>
+           
+              <p>
+                Our team of dedicated healthcare professionals is committed to providing you with the best possible care and support to help you achieve optimal health.
+              </p>
+
+              <a class="link_one" href="#">learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="team-area area-padding">
+      <div class="container">
+        <div class="area-heading row">
+          <div class="col-md-5 col-xl-4">
+            <h3>
+              Healthcheck<br />
+              Experience Doctors
+            </h3>
+          </div>
+          <div class="col-md-7 col-xl-8">
+            <p>
+              We strive to create a welcoming and inclusive environment where everyone feels respected, valued, and empowered to take control of their health. Whether you need preventive care, diagnostic services, or treatment for a chronic condition, we are here to help you every step of the way.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-team">
+              <img
+                class="card-img rounded-0"
+                src="{% static 'core/img/team/1.jpg' %}"
+                alt=""
+              />
+              <div class="card-team__body text-center">
+                <h3><a href="#">Dr Saim</a></h3>
+                <p>Cardiologist</p>
+                <div class="team-footer d-flex justify-content-between">
+                  <a class="dn_btn" href=""
+                    ><i class="fa fa-phone" aria-hidden="true"></i
+                    >+922353652365</a
+                  >
+                  <ul class="card-team__social">
+                    <li>
+                      <a href="#"><i class="ti-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-twitter-alt"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-skype"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-team">
+              <img
+                class="card-img rounded-0"
+                src="{% static 'core/img/team/2.jpg' %}"
+                alt=""
+              />
+              <div class="card-team__body text-center">
+                <h3><a href="#">Dr Moazam</a></h3>
+                <p>ENT Specialist</p>
+                <div class="team-footer d-flex justify-content-between">
+                  <a class="dn_btn" href=""
+                    ><i class="fa fa-phone"></i>+923652365</a
+                  >
+                  <ul class="card-team__social">
+                    <li>
+                      <a href="#"><i class="ti-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-twitter-alt"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-skype"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-team">
+              <img
+                class="card-img rounded-0"
+                src="{% static 'core/img/team/3.jpg' %}"
+                alt=""
+              />
+              <div class="card-team__body text-center">
+                <h3><a href="#">Dr Shahid</a></h3>
+                <p>Eye Specialist</p>
+                <div class="team-footer d-flex justify-content-between">
+                  <a class="dn_btn" href=""
+                    ><i class="fa fa-phone"></i>+92353652365</a
+                  >
+                  <ul class="card-team__social">
+                    <li>
+                      <a href="#"><i class="ti-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-twitter-alt"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="ti-skype"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-area area-padding-top">
+      <div class="container">
+        <div class="row">
+       
+          <div class="col-lg-4 col-sm-6 single-footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">About Us</a></li>
+              
+
+              <li><a href="#">Doctors</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-6 single-footer-widget">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Disease Detection</a></li>
+              <li><a href="#">Drug Recommendation</a></li>
+              <li><a href="#">Take Appointment</a></li>
+              <li><a href="#">Manage Appointment</a></li>
+             
+            </ul>
+          </div>
+      
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form
+                target="_blank"
+                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                method="get"
+                class="form-inline"
+              >
+                <input
+                  class="form-control"
+                  name="EMAIL"
+                  placeholder="Your Email Address"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Your Email Address'"
+                  required=""
+                  type="email"
+                />
+                <button class="click-btn btn btn-default">
+                  <i class="ti-arrow-right"></i>
+                </button>
+                <div style="position: absolute; left: -5000px">
+                  <input
+                    name="b_36c4fd991d266f23781ded980_aefe40901a"
+                    tabindex="-1"
+                    value=""
+                    type="text"
+                  />
+                </div>
+
+                <div class="info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row footer-bottom d-flex justify-content-between">
+          <p class="col-lg-8 col-sm-12 footer-text m-0">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved
+          </p>
+          <div class="col-lg-4 col-sm-12 footer-social">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-dribbble"></i></a>
+            <a href=""><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{% static 'core/j/jquery-2.2.4.min.' %}"></script>
+    <script src="{% static 'core/j/popper.' %}"></script>
+    <script src="{% static 'core/j/bootstrap.min.' %}"></script>
+    <script src="{% static 'core/j/stellar.' %}"></script>
+    <script src="{% static 'vendors/owl-carousel/owl.carousel.min.' %}"></script>
+    <script src="{% static 'core/j/jquery.ajaxchimp.min.' %}"></script>
+    <script src="{% static 'core/j/waypoints.min.' %}"></script>
+    <script src="{% static 'core/j/mail-script.' %}"></script>
+    <script src="{% static 'core/j/contact.' %}"></script>
+    <script src="{% static 'core/j/jquery.form.' %}"></script>
+    <script src="{% static 'core/j/jquery.validate.min.' %}"></script>
+    <script src="{% static 'core/j/mail-script.' %}"></script>
+    <script src="{% static 'core/j/theme.' %}"></script>
+  </body>
+</html>

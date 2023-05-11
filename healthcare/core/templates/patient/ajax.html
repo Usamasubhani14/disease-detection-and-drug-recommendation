@@ -1,0 +1,103 @@
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $('#predict_btn').click(function () {
+      console.log('Button Predict Clicked');
+      var s1 = $('.myform #Symptom1').val();
+      var s2 = $('.myform #Symptom2').val();
+      var s3 = $('.myform #Symptom3').val();
+      var s4 = $('.myform #Symptom4').val();
+      var s5 = $('.myform #Symptom5').val();
+      var id = $('.myform #user_id').val();
+
+      console.log(s1);
+      console.log(s2);
+      console.log(s3);
+      console.log(s4);
+      console.log(s5);
+      console.log(id);
+
+      if (s1 == '') {
+        alert('Please Enter 1st Symptom');
+      } else if (s2 == '') {
+        alert('Please Enter 2st Symptom');
+      } else if (s3 == '') {
+        alert('Please Enter 3st Symptom');
+      } else if (s4 == '') {
+        alert('Please Enter 4st Symptom');
+      } else if (s5 == '') {
+        alert('Please Enter 5st Symptom');
+      } else {
+        mydata = { id: id, s2: s2, s3: s3, s4: s4, s5: s5, s1: s1 };
+        $.ajax({
+          url: '{% url 'predict' %}',
+          method: 'POST',
+          data: mydata,
+
+          success: function (data) {
+            x = data.status;
+            console.log('Data Sent To The Backend');
+            console.log('Predicted Disease', x);
+            $('#result').html('');
+            $('#result').append('There Are Chances You Have ' + x);
+          },
+        });
+      }
+    });
+
+
+    $('#tbody').on('click', '.btn_ment', function () {
+      console.log('Button Appointment Clicked');
+      let disease = $(this).attr('data-sid');
+      var userid = $('#tbody #user_id').val();
+
+      console.log('Prediction ID is', disease);
+      console.log('User ID is', userid);
+
+      mydata = { disease: disease, userid: userid };
+      $.ajax({
+        url: ' {% url 'ment' %}',
+        method: 'POST',
+        data: mydata,
+
+        success: function (data) {
+          x = data.status;
+          console.log('Data Sent To The Backend');
+          console.log('Appointment Status Is ', x);
+
+          if (x == 'saved') {
+            $('#ment_result').html('');
+            $('#ment_result').append('Appointment Was Successfully Requested');
+          } else if (x == 'exist') {
+            $('#ment_result').html('');
+            $('#ment_result').append('Appointment Request Exist');
+          } else {
+            $('#ment_result').html('');
+            $('#ment_result').append('Something Went Wrong');
+          }
+        },
+      });
+    });
+
+
+    $('#tbody').on('click', '.btn_view', function () {
+      console.log('Button Symptoms Clicked');
+      let disease = $(this).attr('data-sid');
+      var userid = $('#tbody #user_id').val();
+
+      console.log('Prediction ID is', disease);
+      console.log('User ID is', userid);
+
+      mydata = { disease: disease, userid: userid };
+      $.ajax({
+        url: '',
+        method: 'POST',
+        data: mydata,
+
+        success: function (data) {
+          console.log('Data Sent To The Backend');
+        },
+      });
+    });
+  });
+</script>

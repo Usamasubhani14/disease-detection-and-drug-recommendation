@@ -1,0 +1,135 @@
+{% extends 'doctor/base.html' %} {% block body %}
+
+<div id="content-wrapper">
+  <div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="">Drug Recommendation Panel</a>
+      </li>
+    </ol>
+
+    <!-- Icon Cards-->
+    <div class="row">
+      <div class="col-sm-8">
+        <h4 class="text-center alert alert-info">List Of Disease Diagnosed</h4>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Disease</th>
+              <th scope="col">Medicine</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <input type="hidden" value="{{ user.id }}" name="" id="user_id" />
+
+            {% for d in disease %}
+            <tr>
+              <td>{{ d.id }}</td>
+              <td>{{ d.patient.username }}</td>
+              <td>{{ d.disease }}</td>
+              {% if d.medicine == "" %}
+              <td>Yet Recommended</td>
+              {% else %}
+              <td>{{ d.medicine }}</td>
+              {% endif %}
+              <td>
+                <input
+                  class="btn btn-primary btn-sm btn_recommend"
+                  type="button"
+                  data-sid="{{d.id}}"
+                  value="Recommend"
+                />
+              </td>
+            </tr>
+
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <div id="ment_result" class="col-sm-10 offset-sm-3"></div>
+
+        <!--- Modal Sympooms -->
+        <div class="edit-form">
+          <div class="modal" tabindex="-1" role="dialog" id="patient_Modal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title text-primary"
+                    style="text-align: center"
+                  >
+                    Candidate Information
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <form id="contactForm" name="contact" role="form">
+                    <input
+                      type="hidden"
+                      name=""
+                      value=""
+                      class="sid"
+                      id="bfid"
+                    />
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="name">First Name</label>
+                        <input
+                          type="text"
+                          name=""
+                          class="form-control"
+                          id="bffname"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Last Name</label>
+                        <input
+                          type="text"
+                          name=""
+                          class="form-control"
+                          id="bflname"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Email</label>
+                        <input
+                          type="email"
+                          name=""
+                          class="form-control"
+                          id="bfemail"
+                        />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-default"
+                        data-dismiss="modal"
+                        id="fmbutton"
+                      >
+                        Close
+                      </button>
+                      <input
+                        type="button"
+                        value="Save"
+                        class="btn btn-success save-student"
+                        id="bfsave"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--- End of modal Symptoms -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
